@@ -1,0 +1,19 @@
+<app-setting></app-setting>
+
+<body>
+  <h1>Championnat</h1>
+  <button mat-raised-button color="accent" (click)="openDialog()">Create</button>
+
+  <ul class="championnats">
+    <li *ngFor="let championnat of championnats">
+      <a routerLink="/detail/{{championnat._id}}">
+        <span class="badge">{{championnat._id}}</span> {{championnat.name}} &nbsp;
+          {{championnat.type}} &nbsp; {{championnat.date | date:'medium'}}
+      </a>
+      <button class="delete" title="delete championnat"
+              (click)="delete(championnat)">
+        x
+      </button>
+    </li>
+  </ul>
+</body>

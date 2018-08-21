@@ -1,0 +1,25 @@
+<app-setting></app-setting>
+
+<body>
+  <h1>Details du Championnat</h1>
+  <button mat-raised-button color="accent" (click)="disable()">Edit</button>&nbsp;
+  <button mat-raised-button color="accent" [disabled]="disabled" (click)="save()">Save</button>
+
+  <div *ngIf="championnat">
+    <h2>{{championnat.name | uppercase}}</h2>
+    <div><span>id: </span>{{championnat._id}}</div>
+    <div><span>type: </span>{{championnat.type}}</div>
+    <div><span>date: </span>{{championnat.date}}</div>
+  
+    <br>
+    <br>
+    <br>
+
+    <div>name:<br> <input [disabled]="disabled" placeholder="Name" value={{championnat.name}}></div>
+    <div>id:<br> <input [disabled]="disabled" placeholder="ID" value={{championnat._id}}></div>
+    <div>type:<br> <input matInput [disabled]="disabled" placeholder="Type" value={{championnat.type}}></div>
+    <div>date:<br> <input matInput [disabled]="disabled" placeholder="Date" value={{championnat.date}}></div>
+  
+  </div>
+
+</body>

@@ -1,0 +1,19 @@
+<app-setting></app-setting>
+
+<body>
+  <h1>Levels</h1>
+
+<button mat-raised-button color="accent" (click)="openDialog()">Add</button>
+
+<ul class="levels">
+  <li *ngFor="let level of levels">
+    <a routerLink="/detail/{{level._id}}">
+      <span class="badge">{{level._id}}</span> {{level.name}} 
+    </a>
+    <button class="delete" title="delete level"
+            (click)="delete(level)">
+      x
+    </button>
+  </li>
+</ul>
+</body>

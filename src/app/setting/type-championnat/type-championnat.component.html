@@ -1,0 +1,19 @@
+<app-setting></app-setting>
+
+<body>
+  <h1>Type Championnat</h1>
+
+<button mat-raised-button color="accent" (click)="openDialog()">Add</button>
+
+<ul class="types">
+  <li *ngFor="let type of types">
+    <a routerLink="/detail/{{type._id}}">
+      <span class="badge">{{type._id}}</span> {{type.name}} 
+    </a>
+    <button class="delete" title="delete type"
+            (click)="delete(type)">
+      x
+    </button>
+  </li>
+</ul>
+</body>

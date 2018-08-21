@@ -1,0 +1,19 @@
+<app-setting></app-setting>
+
+<body>
+  <h1>Categories</h1>
+
+<button mat-raised-button color="accent" (click)="openDialog()">Add</button>
+
+<ul class="categories">
+  <li *ngFor="let categorie of categories">
+    <a routerLink="/detail/{{categorie._id}}">
+      <span class="badge">{{categorie._id}}</span> {{categorie.name}} 
+    </a>
+    <button class="delete" title="delete categorie"
+            (click)="delete(categorie)">
+      x
+    </button>
+  </li>
+</ul>
+</body>

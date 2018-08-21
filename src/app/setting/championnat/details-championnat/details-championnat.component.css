@@ -1,0 +1,11 @@
+body
+{
+  position:absolute;
+  background-color: #FFF;
+	width: 700px ;
+	height: 340px ;
+	top:55%;
+	left:45%;
+	margin-top:-170px;
+  margin-left:-350px;
+}

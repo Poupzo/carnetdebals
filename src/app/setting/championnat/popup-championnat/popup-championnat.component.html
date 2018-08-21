@@ -1,0 +1,28 @@
+
+<div mat-dialog-content>
+  <mat-form-field class="example-full-width">
+    <input matInput maxlength="256" placeholder="Name of Championnat" [(ngModel)]="data.name">
+    
+  </mat-form-field>
+</div>
+
+<div mat-lol-content>
+  <mat-form-field>
+    <mat-select placeholder="Championnat type" [(ngModel)]="data.type">
+      <mat-option *ngFor="let type of types" [value]="type.name">
+        {{type.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  &nbsp;
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="data.date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Back</button>
+  <button mat-button [mat-dialog-close]="data">Save</button>
+</div>

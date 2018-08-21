@@ -1,0 +1,19 @@
+<app-setting></app-setting>
+
+<body>
+  <h1>Danses</h1>
+
+<button mat-raised-button color="accent" (click)="openDialog()">Add</button>
+
+<ul class="danses">
+  <li *ngFor="let danse of danses">
+    <a routerLink="/detail/{{danse._id}}">
+      <span class="badge">{{danse._id}}</span> {{danse.name}} 
+    </a>
+    <button class="delete" title="delete danse"
+            (click)="delete(danse)">
+      x
+    </button>
+  </li>
+</ul>
+</body>

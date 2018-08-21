@@ -1,0 +1,19 @@
+<app-setting></app-setting>
+
+<body>
+  <h1>Choregraphes</h1>
+
+<button mat-raised-button color="accent" (click)="openDialog()">Add</button>
+
+<ul class="choregraphes">
+  <li *ngFor="let choregraphe of choregraphes">
+    <a routerLink="/detail/{{choregraphe._id}}">
+      <span class="badge">{{choregraphe._id}}</span> {{choregraphe.name}} 
+    </a>
+    <button class="delete" title="delete choregraphe"
+            (click)="delete(choregraphe)">
+      x
+    </button>
+  </li>
+</ul>
+</body>

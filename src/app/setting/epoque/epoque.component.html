@@ -1,0 +1,19 @@
+<app-setting></app-setting>
+
+<body>
+  <h1>Epoques</h1>
+
+<button mat-raised-button color="accent" (click)="openDialog()">Add</button>
+
+<ul class="epoques">
+  <li *ngFor="let epoque of epoques">
+    <a routerLink="/detail/{{epoque._id}}">
+      <span class="badge">{{epoque._id}}</span> {{epoque.name}} 
+    </a>
+    <button class="delete" title="delete epoque"
+            (click)="delete(epoque)">
+      x
+    </button>
+  </li>
+</ul>
+</body>
